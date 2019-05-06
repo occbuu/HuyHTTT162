@@ -1,0 +1,76 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Cấu hình log</h4>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="form-group row">
+                        <div class="col-sm-2">
+                            <label style="margin-top: 1%">Vị trí file Log:</label></div>
+                        <div class="col-sm-3">
+                            <div class="custom-file">
+                                <input type="file" id="customFile">
+                                <label class="custom-file-label" for="customFile">Chọn tệp</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2">
+                            <label style="margin-top: 1%">Loại file Log</label></div>
+                        <div class="col-sm-3">
+                            <select class="form-control">
+                                <option>XML</option>
+                                <option>JS</option>
+                                <option>TXT</option>
+                                <option>LOG</option>
+                            </select></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2">
+                            <label style="margin-top: 1%">Kích thước tối đa</label></div>
+                        <div class="col-sm-3">
+                            <select class="form-control">
+                                <option>1MB</option>
+                                <option>10MB</option>
+                                <option>100MB</option>
+                                <option>1GB</option>
+                            </select></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2">
+                            <label style="margin-top: 1%">Thời gian đọc</label></div>
+                        <div class="col-sm-3">
+                            <select class="form-control">
+                                <option>1 phút</option>
+                                <option>5 phút</option>
+                                <option>10 phút</option>
+                                <option>30 phút</option>
+                            </select></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2"></div>
+                        <button type="button" class="btn btn-danger" style="margin-right: 2%" data-toggle="modal"
+                            data-target="#modalSave">Lưu</button>
+                        <a href=""><button type="button" class="btn btn-dark">Quay lại</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalSave" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Lưu thành công.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>

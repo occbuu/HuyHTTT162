@@ -1,0 +1,244 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row" *ngIf="screen == 'profile'">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Chỉnh sửa thông tin</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Tên đăng nhập">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email" type="email">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Tên" type="text">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Họ" type="text">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Địa chỉ" type="text">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Thành phố" type="text">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Quốc gia" type="text">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Mã bưu điện" type="text">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Giới thiệu</label>
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder=""></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" data-toggle="modal"
+                                data-target="#modalSave">Cập nhật</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" src="../assets/img/avatar.jpg" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-gray">IT</h6>
+                        <h4 class="card-title">Trần Trung Hiền</h4>
+                        <p class="card-description">
+                            NGHIÊN CỨU XÂY DỰNG HỆ THỐNG QUẢN LÝ VÀ GIÁM SÁT SNORT TRỰC TUYẾN, ỨNG DỤNG TẠI ĐẠI HỌC Y
+                            DƯỢC TP.HỒ CHÍ MINH
+                        </p>
+                        <a href="#pablo" class="btn btn-danger btn-round">Theo dõi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="screen == 'role'">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Phân quyền</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group row col-md-8">
+                                    <label class="col-md-3 col-form-label" for="select">Vai trò</label>
+                                    <input class="col-md-8 form-control ng-untouched ng-pristine ng-valid" name="name"
+                                        ngmodel="" placeholder="Nhập vai trò" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group row col-md-8">
+                                    <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">Trạng thái</label>
+                                    <select class="col-xs-12 col-12 col-md-8 form-control ng-untouched ng-pristine ng-valid">
+                                        <option value="ACT">Active</option>
+                                        <option value="INA">Inactive</option>
+                                        <option value="-">All</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group row" style="margin-left: 1%">
+                                    <button class="btn btn-danger pull-right">Tìm kiếm</button> &nbsp;
+                                    <button class="btn btn-danger pull-right">Làm mới</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card-body">
+                                <div class="col-md-12 mar-export">
+                                    <button class="btn btn-danger pull-right" (click)=" AlertModal.show() " type="button "
+                                        tabindex="0 ">Thêm mới</button>
+                                    <button class="btn btn-danger pull-right">Xuất file Excel</button>
+                                    <br /><br />
+                                </div>
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:30% ">
+                                                <a class="text-nowrap " style="cursor: pointer ">
+                                                    Vai trò
+                                                </a>
+                                            </th>
+                                            <th style="width:30%">
+                                                <a class="text-nowrap " style="cursor: pointer ">
+                                                    Remarks
+                                                </a>
+                                            </th>
+                                            <th style="width:30%;text-align: center ">
+                                                <a class="text-nowrap " style="cursor: pointer ">
+                                                    Tình trạng
+                                                </a>
+                                            </th>
+                                            <th style="width: 10% ">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CapBridgeAdmin</td>
+                                            <td>CapBridgeAdmin</td>
+                                            <td class="text-center ">Active</td>
+                                            <td class="text-center ">
+                                                <a class="btn-blue fa fa-pencil " href="#/roles-edit/2 "></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Investor</td>
+                                            <td>Investor</td>
+                                            <td class="text-center ">Active</td>
+                                            <td class="text-center ">
+                                                <a class="btn-blue fa fa-pencil " href="#/roles-edit/1 "></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Company Admin</td>
+                                            <td>Company Admin</td>
+                                            <td class="text-center ">Active</td>
+                                            <td class="text-center ">
+                                                <a class="btn-blue fa fa-pencil " href="#/roles-edit/18 "></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Test</td>
+                                            <td>xxx</td>
+                                            <td class="text-center ">Active</td>
+                                            <td class="text-center ">
+                                                <a class="btn-blue fa fa-pencil " href="#/roles-edit/21 "></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DBAdmin</td>
+                                            <td>DB Admin</td>
+                                            <td class="text-center ">Active</td>
+                                            <td class="text-center ">
+                                                <a class="btn-blue fa fa-pencil " href="#/roles-edit/20 "></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <div class="row" style="text-align: center">
+                                                    <ul class="pagination ">
+                                                        <li class="page-item ">
+                                                            <a class="page-link " style="cursor: pointer ">«</a>
+                                                        </li>
+                                                        <li class="page-item ">
+                                                            <a class="page-link " style="cursor: pointer ">1</a>
+                                                        </li>
+                                                        <li class="page-item ">
+                                                            <a class="page-link " style="cursor: pointer ">2</a>
+                                                        </li>
+                                                        <li class="page-item ">
+                                                            <a class="page-link " style="cursor: pointer ">»</a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="pagination pull-right float-sm-right ">
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal-->
+<div class="modal fade" id="modalSave" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Lưu thành công.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>

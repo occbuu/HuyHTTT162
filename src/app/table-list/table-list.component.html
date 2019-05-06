@@ -1,0 +1,124 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Xem traffic</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Job ID
+                                    </th>
+                                    <th>
+                                        Protocol
+                                    </th>
+                                    <th>
+                                        Time
+                                    </th>
+                                    <th>
+                                        DataType
+                                    </th>
+                                    <th>
+                                        Size
+                                    </th>
+                                    <th>
+                                        Route
+                                    </th>
+                                    <th>
+                                        Ip From
+                                    </th>
+                                    <th>
+                                        Ip To
+                                    </th>
+                                    <th>
+                                        Pass STT
+                                    </th>
+                                    <th>
+                                        Port From
+                                    </th>
+                                    <th>
+                                        Port To
+                                    </th>
+                                    <th>
+                                        Alert Mode
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let itemresult of lst">
+                                        <td>
+                                            {{itemresult.IDSnort}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.Protocol}}
+                                        </td>
+                                        <td>
+                                            <img class="img" src="../assets/img/faces/clock-icon.png" />
+                                            {{itemresult.LogTime}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.DataType}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.Size}} KB
+                                        </td>
+                                        <td>
+                                            {{itemresult.Route}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.IP_From}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.IP_To}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.PassStt}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.PortFrom}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.PortTo}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.AlertMode}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="row text-center">
+                                                <ul class="pagination ">
+                                                    <li class="page-item ">
+                                                        <a class="page-link " style="cursor: pointer ">«</a>
+                                                    </li>
+                                                    <li class="page-item ">
+                                                        <a class="page-link " style="cursor: pointer ">1</a>
+                                                    </li>
+                                                    <li class="page-item ">
+                                                        <a class="page-link " style="cursor: pointer ">2</a>
+                                                    </li>
+                                                    <li class="page-item ">
+                                                        <a class="page-link " style="cursor: pointer ">»</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="pagination pull-right float-sm-right ">
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
