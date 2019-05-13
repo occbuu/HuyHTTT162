@@ -1,3 +1,7 @@
 .result-msg {
-    padding-left: 4%
+    padding-top: 3%;
+    padding-left: 30%;
+    font-weight: bold;
+    color: blue;
+    font-size: 150%; 
   }
