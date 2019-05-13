@@ -8,37 +8,73 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group row col-md-8">
-                                <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">SNORT</label>
-                                <select class="col-xs-12 col-12 col-md-8 form-control ng-untouched ng-pristine ng-valid">
-                                    <option value="ACT">Snort của tất cả</option>
-                                    <option value="INA">Snort của khoa Y</option>
-                                    <option value="-">Snort của khoa Dược</option>
-                                    <option value="-">Snort của khoa Răng Hàm Mặt</option>
-                                </select>
+                            <div class="form-group row col-md-7">
+                                <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">Ip nguồn</label>
+                                <input class="col-md-8 form-control ng-untouched ng-pristine ng-valid" name="name"
+                                    ngmodel="" type="text">
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group row col-md-8">
-                                <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">Thông số</label>
-                                <select class="col-xs-12 col-12 col-md-8 form-control ng-untouched ng-pristine ng-valid">
-                                    <option value="ACT">Job ID</option>
-                                    <option value="INA">Protocol</option>
-                                    <option value="-">Time</option>
-                                    <option value="-">DataType</option>
-                                    <option value="-">Size</option>
-                                    <option value="-">Route</option>
-                                    <option value="-">Ip From</option>
-                                    <option value="-">Ip To</option>
-                                    <option value="-">Pass STT</option>
-                                    <option value="-">Port From</option>
-                                    <option value="-">Port To</option>
-                                    <option value="-">Alert Mode</option>
-                                </select>
+                            <div class="form-group row col-md-7">
+                                <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">Ip đích</label>
+                                <input class="col-md-8 form-control ng-untouched ng-pristine ng-valid" name="name"
+                                    ngmodel="" type="text">
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group row" style="margin-left: 50%">
+                            <div class="form-group row col-md-7">
+                                <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">Thời gian (dd/mm/yyyy)</label>
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Từ">
+                                </mat-form-field>
+                                <div class="col-md-1"></div>  
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Đến">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-check" style="padding-left: 15%">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="" checked>RDP
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label" style="margin-left: 2%">
+                                    <input class="form-check-input" type="checkbox" value="" checked>Ping
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label" style="margin-left: 2%">
+                                    <input class="form-check-input" type="checkbox" value="" checked>SSH
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label" style="margin-left: 2%">
+                                    <input class="form-check-input" type="checkbox" value="" checked>Telnet
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label" style="margin-left: 2%">
+                                    <input class="form-check-input" type="checkbox" value="" checked>NMAp
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label" style="margin-left: 2%">
+                                    <input class="form-check-input" type="checkbox" value="" checked>Tracert
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group row" style="margin-left: 35%">
                                 <button class="btn btn-danger pull-right" (click)="show()">Xem</button>
                             </div>
                         </div>
@@ -53,7 +89,7 @@
                                     <table class="table table-hover">
                                         <thead class=" text-primary">
                                             <th>
-                                                Job ID
+                                                ID
                                             </th>
                                             <th>
                                                 Protocol
@@ -65,10 +101,7 @@
                                                 DataType
                                             </th>
                                             <th>
-                                                Size
-                                            </th>
-                                            <th>
-                                                Route
+                                                Length
                                             </th>
                                             <th>
                                                 Ip From
@@ -77,61 +110,41 @@
                                                 Ip To
                                             </th>
                                             <th>
-                                                Pass STT
-                                            </th>
-                                            <th>
-                                                Port From
-                                            </th>
-                                            <th>
-                                                Port To
-                                            </th>
-                                            <th>
-                                                Alert Mode
+                                                Info
                                             </th>
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let itemresult of lst">
                                                 <td>
-                                                    {{itemresult.IDSnort}}
+                                                    {{itemresult.No}}
                                                 </td>
                                                 <td>
                                                     {{itemresult.Protocol}}
                                                 </td>
                                                 <td>
-                                                    <img class="img" src="../assets/img/faces/clock-icon.png" />
-                                                    {{itemresult.LogTime}}
+                                                    {{itemresult.Time}}
                                                 </td>
                                                 <td>
-                                                    {{itemresult.DataType}}
+                                                    {{itemresult.Type}}
                                                 </td>
                                                 <td>
-                                                    {{itemresult.Size}} KB
+                                                    {{itemresult.Length}}
                                                 </td>
                                                 <td>
-                                                    {{itemresult.Route}}
+                                                    {{itemresult.Source}}
                                                 </td>
                                                 <td>
-                                                    {{itemresult.IP_From}}
+                                                    {{itemresult.Destination}}
                                                 </td>
                                                 <td>
-                                                    {{itemresult.IP_To}}
-                                                </td>
-                                                <td>
-                                                    {{itemresult.PassStt}}
-                                                </td>
-                                                <td>
-                                                    {{itemresult.PortFrom}}
-                                                </td>
-                                                <td>
-                                                    {{itemresult.PortTo}}
-                                                </td>
-                                                <td>
-                                                    {{itemresult.AlertMode}}
+                                                    {{itemresult.Info}}
                                                 </td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
                                             <tr>
+                                                <td></td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>
