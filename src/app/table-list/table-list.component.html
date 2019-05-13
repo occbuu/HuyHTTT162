@@ -2,6 +2,27 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                <div class="card card-chart">
+                    <div class="card-header card-header-info">
+                        <div class="ct-chart" id="dailySalesChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Log statistics</h4>
+                        <p class="card-category">
+                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 10% </span> increase in
+                            today.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> updated 4 minutes ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Xem traffic</h4>
@@ -11,7 +32,7 @@
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
-                                        Job ID
+                                        ID
                                     </th>
                                     <th>
                                         Protocol
@@ -23,10 +44,7 @@
                                         DataType
                                     </th>
                                     <th>
-                                        Size
-                                    </th>
-                                    <th>
-                                        Route
+                                        Length
                                     </th>
                                     <th>
                                         Ip From
@@ -35,61 +53,41 @@
                                         Ip To
                                     </th>
                                     <th>
-                                        Pass STT
-                                    </th>
-                                    <th>
-                                        Port From
-                                    </th>
-                                    <th>
-                                        Port To
-                                    </th>
-                                    <th>
-                                        Alert Mode
+                                        Info
                                     </th>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let itemresult of lst">
                                         <td>
-                                            {{itemresult.IDSnort}}
+                                            {{itemresult.No}}
                                         </td>
                                         <td>
                                             {{itemresult.Protocol}}
                                         </td>
                                         <td>
-                                            <img class="img" src="../assets/img/faces/clock-icon.png" />
-                                            {{itemresult.LogTime}}
+                                            {{itemresult.Time}}
                                         </td>
                                         <td>
-                                            {{itemresult.DataType}}
+                                            {{itemresult.Type}}
                                         </td>
                                         <td>
-                                            {{itemresult.Size}} KB
+                                            {{itemresult.Length}}
                                         </td>
                                         <td>
-                                            {{itemresult.Route}}
+                                            {{itemresult.Source}}
                                         </td>
                                         <td>
-                                            {{itemresult.IP_From}}
+                                            {{itemresult.Destination}}
                                         </td>
                                         <td>
-                                            {{itemresult.IP_To}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.PassStt}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.PortFrom}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.PortTo}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.AlertMode}}
+                                            {{itemresult.Info}}
                                         </td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <td></td>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td>
