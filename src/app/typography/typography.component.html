@@ -5,91 +5,89 @@
                 <h4 class="card-title">Cấu hình log</h4>
             </div>
             <div class="card-body">
-                <div class="    ">
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label style="margin-top: 1%">Vị trí file Log:</label></div>
-                        <div class="col-sm-3">
-                            <div class="custom-file">
-                                <input type="file" id="customFile">
-                                <label class="custom-file-label" for="customFile">Chọn tệp</label>
-                            </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label style="margin-top: 1%">Vị trí file Log:</label></div>
+                    <div class="col-sm-3">
+                        <div class="custom-file">
+                            <input type="file" id="customFile">
+                            <label class="custom-file-label" for="customFile">Chọn tệp</label>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="radio" style="margin-left: 18%">
-                            <label><input type="radio" name="optradio" checked>Local</label>
-                            <label><input type="text" style="margin-left: 11%"></label>
+                </div>
+                <div class="form-group">
+                    <div class="radio" style="margin-left: 18%">
+                        <label><input type="radio" name="optradio" checked>Local</label>
+                        <label><input type="text" style="margin-left: 11%"></label>
+                    </div>
+                    <div class="radio" style="margin-left: 18%">
+                        <label><input type="radio" name="optradio">Network</label>
+                        <label><input type="text"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label style="margin-top: 1%">Loại file Log</label></div>
+                    <div class="col-sm-3">
+                        <select class="form-control">
+                            <option>XML</option>
+                            <option>JS</option>
+                            <option>TXT</option>
+                            <option>LOG</option>
+                            <option>CSV</option>
+                            <option>CAP</option>
+                            <option>DMP</option>
+                        </select></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label style="margin-top: 1%">Kích thước tối đa</label></div>
+                    <div class="col-sm-3">
+                        <select class="form-control">
+                            <option>1MB</option>
+                            <option>10MB</option>
+                            <option>100MB</option>
+                            <option>1GB</option>
+                        </select></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label style="margin-top: 1%">Thời gian đọc</label></div>
+                    <div class="col-sm-3">
+                        <select class="form-control">
+                            <option>1 phút</option>
+                            <option>5 phút</option>
+                            <option>10 phút</option>
+                            <option>30 phút</option>
+                        </select></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label style="margin-top: 1%">Các hành vi tự nhận biết </label></div>
+                    <div>
+                        <input class="form-check-input" type="text" value="SSH, Telnet, RDP, Ping"
+                            style="margin-left: 1%" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label style="margin-top: 1%">Xử lý log</label></div>
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked>
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
                         </div>
-                        <div class="radio" style="margin-left: 18%">
-                            <label><input type="radio" name="optradio">Network</label>
-                            <label><input type="text"></label>
-                        </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label style="margin-top: 1%">Loại file Log</label></div>
-                        <div class="col-sm-3">
-                            <select class="form-control">
-                                <option>XML</option>
-                                <option>JS</option>
-                                <option>TXT</option>
-                                <option>LOG</option>
-                                <option>CSV</option>
-                                <option>CAP</option>
-                                <option>DMP</option>
-                            </select></div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label style="margin-top: 1%">Kích thước tối đa</label></div>
-                        <div class="col-sm-3">
-                            <select class="form-control">
-                                <option>1MB</option>
-                                <option>10MB</option>
-                                <option>100MB</option>
-                                <option>1GB</option>
-                            </select></div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label style="margin-top: 1%">Thời gian đọc</label></div>
-                        <div class="col-sm-3">
-                            <select class="form-control">
-                                <option>1 phút</option>
-                                <option>5 phút</option>
-                                <option>10 phút</option>
-                                <option>30 phút</option>
-                            </select></div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label style="margin-top: 1%">Các hành vi tự nhận biết </label></div>
-                        <div>
-                            <input class="form-check-input" type="text" value="SSH, Telnet, RDP, Ping"
-                                style="margin-left: 1%" disabled>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2">
-                            <label style="margin-top: 1%">Xử lý log</label></div>
-                        <div class="col-sm-3">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" value="" checked>
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2"></div>
-                        <button type="button" class="btn btn-danger" style="margin-right: 2%" data-toggle="modal"
-                            data-target="#modalSave">Lưu</button>
-                        <a href=""><button type="button" class="btn btn-dark">Quay lại</button></a>
-                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2"></div>
+                    <button type="button" class="btn btn-danger" style="margin-right: 2%" data-toggle="modal"
+                        data-target="#modalSave">Lưu</button>
+                    <a href=""><button type="button" class="btn btn-dark">Quay lại</button></a>
                 </div>
             </div>
         </div>
