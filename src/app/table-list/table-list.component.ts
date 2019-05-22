@@ -3,28 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import * as Chartist from 'chartist';
 
-export class Snort {
-  id: number;
-  TimeSnort: String;
-  IDSnort: number;
-  Protocol: String;
-  DataType: String;
-  Size: number;
-  Route: String;
-  IPFrom: String;
-  IPTo: String;
-  WorkNo: String;
-  PassStt: String;
-  PortFrom: number;
-  PortTo: number;
-  LogTime: String;
-  IP_From: String;
-  IP_To: String;
-  IpType: String;
-  AlertMode: number;
-  SamePort: number;
-}
-
 @Component({
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
@@ -32,7 +10,7 @@ export class Snort {
 })
 export class TableListComponent implements OnInit {
   itemresults: any[];
-  lst : Snort[];
+  lst : any[];
 
   constructor(
     private route: ActivatedRoute,
@@ -42,7 +20,7 @@ export class TableListComponent implements OnInit {
     //this.itemresults = ROUTES.filter(itemresult => itemresult);
     this.http.get("./assets/snortdata.json").subscribe(
       data => {
-        this.lst = data as Snort [];	 // FILL THE ARRAY WITH DATA.
+        this.lst = data as any [];	 // FILL THE ARRAY WITH DATA.
         //  console.log(this.arrBirds[1]);
       },
     );

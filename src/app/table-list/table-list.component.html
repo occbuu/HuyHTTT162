@@ -77,19 +77,10 @@
                                 <tbody>
                                     <tr *ngFor="let itemresult of lst">
                                         <td>
-                                            {{itemresult.No}}
+                                            {{itemresult.Id}}
                                         </td>
                                         <td>
-                                            {{itemresult.Protocol}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Time}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Type}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Length}}
+                                            {{itemresult.Duration}}
                                         </td>
                                         <td>
                                             {{itemresult.Source}}
@@ -98,7 +89,34 @@
                                             {{itemresult.Destination}}
                                         </td>
                                         <td>
+                                            {{itemresult.Protocol}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.Length}}
+                                        </td>
+                                        <td>
                                             {{itemresult.Info}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.Type}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.SourcePort}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.DestinationPort}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.MessagePhase}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.ClientExchange}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.CipherChange}}
+                                        </td>
+                                        <td>
+                                            {{itemresult.Ping}}
                                         </td>
                                     </tr>
                                 </tbody>

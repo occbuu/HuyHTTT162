@@ -23,11 +23,12 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group row col-md-7">
-                                <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">Thời gian (dd/mm/yyyy)</label>
+                                <label class="col-xs-12 col-12 col-md-3 col-form-label" for="select">Thời gian
+                                    (dd/mm/yyyy)</label>
                                 <mat-form-field class="example-full-width">
                                     <input matInput placeholder="Từ">
                                 </mat-form-field>
-                                <div class="col-md-1"></div>  
+                                <div class="col-md-1"></div>
                                 <mat-form-field class="example-full-width">
                                     <input matInput placeholder="Đến">
                                 </mat-form-field>
@@ -130,24 +131,15 @@
                                             </th>
                                             <th>
                                                 CipherChange
-                                            </th>                                            
+                                            </th>
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let itemresult of lst">
                                                 <td>
-                                                    {{itemresult.No}}
+                                                    {{itemresult.Id}}
                                                 </td>
                                                 <td>
-                                                    {{itemresult.Protocol}}
-                                                </td>
-                                                <td>
-                                                    {{itemresult.Time}}
-                                                </td>
-                                                <td>
-                                                    {{itemresult.Type}}
-                                                </td>
-                                                <td>
-                                                    {{itemresult.Length}}
+                                                    {{itemresult.Duration}}
                                                 </td>
                                                 <td>
                                                     {{itemresult.Source}}
@@ -156,7 +148,34 @@
                                                     {{itemresult.Destination}}
                                                 </td>
                                                 <td>
+                                                    {{itemresult.Protocol}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.Length}}
+                                                </td>
+                                                <td>
                                                     {{itemresult.Info}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.Type}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.SourcePort}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.DestinationPort}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.MessagePhase}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.ClientExchange}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.CipherChange}}
+                                                </td>
+                                                <td>
+                                                    {{itemresult.Ping}}
                                                 </td>
                                             </tr>
                                         </tbody>
