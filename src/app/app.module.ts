@@ -1,10 +1,9 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule  } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -21,10 +20,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 // import { MapsComponent } from './maps/maps.component';
 // import { NotificationsComponent } from './notifications/notifications.component';
 // import { UpgradeComponent } from './upgrade/upgrade.component';
+
 import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ApiProvider } from './providers/api';
+import { HuyProvider } from './providers/huy';
 
 @NgModule({
   imports: [
@@ -42,13 +44,15 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-
+    AdminLayoutComponent
   ],
   exports: [
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [
+    ApiProvider,
+    HuyProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

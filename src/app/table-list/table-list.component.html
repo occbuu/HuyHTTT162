@@ -27,128 +27,51 @@
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Xem traffic</h4>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Duration
-                                    </th>
-                                    <th>
-                                        Source
-                                    </th>
-                                    <th>
-                                        Destination
-                                    </th>
-                                    <th>
-                                        Protocol
-                                    </th>
-                                    <th>
-                                        Length
-                                    </th>
-                                    <th>
-                                        Type
-                                    </th>
-                                    <th>
-                                        Info
-                                    </th>
-                                    <th>
-                                        SourcePort
-                                    </th>
-                                    <th>
-                                        DestinationPort
-                                    </th>
-                                    <th>
-                                        Ping
-                                    </th>
-                                    <th>
-                                        MessagePhase
-                                    </th>
-                                    <th>
-                                        ClientExchange
-                                    </th>
-                                    <th>
-                                        CipherChange
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let itemresult of lst">
-                                        <td>
-                                            {{itemresult.Id}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Duration}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Source}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Destination}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Protocol}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Length}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Info}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Type}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.SourcePort}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.DestinationPort}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.MessagePhase}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.ClientExchange}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.CipherChange}}
-                                        </td>
-                                        <td>
-                                            {{itemresult.Ping}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <div class="row text-center">
-                                                <ul class="pagination ">
-                                                    <li class="page-item ">
-                                                        <a class="page-link " style="cursor: pointer ">«</a>
-                                                    </li>
-                                                    <li class="page-item ">
-                                                        <a class="page-link " style="cursor: pointer ">1</a>
-                                                    </li>
-                                                    <li class="page-item ">
-                                                        <a class="page-link " style="cursor: pointer ">2</a>
-                                                    </li>
-                                                    <li class="page-item ">
-                                                        <a class="page-link " style="cursor: pointer ">»</a>
-                                                    </li>
-                                                </ul>
-                                                <ul class="pagination pull-right float-sm-right ">
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                    <div class="card-body over-scroll">
+                        <ng2-smart-table class="table table-hover" [settings]="setting" [source]="lst">
+                        </ng2-smart-table>
+                        <div _ngcontent-c32="" _nghost-c34="" class="ng-star-inserted" style="padding: 1.25rem;"
+                            [hidden]="lst && lst.length==0">
+                            <nav _ngcontent-c34="" class="ng2-smart-pagination-nav ng-star-inserted row">
+                                <ul _ngcontent-c34="" class="ng2-smart-pagination pagination col-md-6">
+                                    <li _ngcontent-c34="" [ngClass]="{'disabled': pager.currentPage === 1}"
+                                        class="ng2-smart-page-item page-item disabled"><a _ngcontent-c34=""
+                                            aria-label="First" class="ng2-smart-page-link page-link"
+                                            (click)="searchClick(1)"><span _ngcontent-c34=""
+                                                aria-hidden="true">«</span><span _ngcontent-c34=""
+                                                class="sr-only">First</span></a></li>
+                                    <li [ngClass]="{disabled:pager.currentPage === 1}" _ngcontent-c34=""
+                                        class="ng2-smart-page-item page-item"><a _ngcontent-c34="" aria-label="Prev"
+                                            class="ng2-smart-page-link page-link page-link-prev"
+                                            (click)="searchClick(pager.currentPage - 1)"><span _ngcontent-c34=""
+                                                aria-hidden="true">&lt;</span><span _ngcontent-c34=""
+                                                class="sr-only">Prev</span></a></li>
+                                    <li _ngcontent-c34="" *ngFor="let page of pager.pages"
+                                        [ngClass]="{active:pager.currentPage === page}"
+                                        class="ng2-smart-page-item page-item ng-star-inserted"
+                                        (click)="searchClick(page)">
+                                        <span _ngcontent-c34=""
+                                            class="ng2-smart-page-link page-link ng-star-inserted">{{page}}<span
+                                                _ngcontent-c34="" class="sr-only">(current)</span></span>
+                                    </li>
+                                    <li _ngcontent-c34="" [ngClass]="{disabled:pager.currentPage === pager.totalPages}"
+                                        class="ng2-smart-page-item page-item"><a _ngcontent-c34="" aria-label="Next"
+                                            class="ng2-smart-page-link page-link page-link-next"
+                                            (click)="searchClick(pager.currentPage + 1)"><span _ngcontent-c34=""
+                                                aria-hidden="true">&gt;</span><span _ngcontent-c34=""
+                                                class="sr-only">Next</span></a></li>
+                                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" _ngcontent-c34=""
+                                        class="ng2-smart-page-item page-item"><a _ngcontent-c34="" aria-label="Last"
+                                            class="ng2-smart-page-link page-link"
+                                            (click)="searchClick(pager.totalPages)"><span _ngcontent-c34=""
+                                                aria-hidden="true">»</span><span _ngcontent-c34=""
+                                                class="sr-only">Last</span></a>
+                                    </li>
+                                </ul>
+                                <span class="col-md-6 text-right text-italic">
+                                    {{total}} items
+                                </span>
+                            </nav>
                         </div>
                     </div>
                 </div>

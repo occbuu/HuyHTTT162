@@ -11,6 +11,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import {
   MatButtonModule,
@@ -27,6 +28,7 @@ import {
     MatRippleModule,
     MatInputModule,
     MatTooltipModule,
+    Ng2SmartTableModule,
   ],
   declarations: [
     DashboardComponent,

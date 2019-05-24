@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  showLog: true,
+  apiUrl: "/",
+  imgUrl: "/assets/img/"
 };
