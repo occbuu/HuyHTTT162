@@ -1,3 +1,17 @@
 .over-scroll {
     overflow-x: scroll;
 }
+
+.select-filter {
+    border-radius: 4px;
+    border: 0;
+    padding-left: 8px;
+    padding-top: 1px;
+    width: 110px;
+}
+
+.text-filter {
+    border-radius: 4px;
+    border: 0;
+    padding-left: 8px;
+}

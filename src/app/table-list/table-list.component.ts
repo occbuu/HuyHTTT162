@@ -19,6 +19,9 @@ export class TableListComponent implements OnInit {
     public total: number = 0;
     public setting = {};
 
+    public filterType = "";
+    public filterValue = "";
+
     constructor(
         private proHuy: HuyProvider,
         public http: HttpClient) { }
@@ -74,6 +77,17 @@ export class TableListComponent implements OnInit {
         this.startAnimationForLineChart(completedTasksChart);
     }
 
+    filterTypeChange(event) {
+        if (event.target.value == '') this.searchLog(1);
+    }
+
+    filterChange(value) {
+        let filter = {
+            [this.filterType]: value
+        };
+        this.searchLog(1, filter);
+    }
+
     startAnimationForLineChart(chart) {
         let seq: any, delays: any, durations: any;
         seq = 0;
@@ -108,10 +122,9 @@ export class TableListComponent implements OnInit {
         seq = 0;
     };
 
-    searchLog(page: any) {
+    searchLog(page: any, filter = null) {
         let x = {
-            filter: {
-            },
+            filter: filter,
             page: page,
             size: this.pageSize,
             sort: [
